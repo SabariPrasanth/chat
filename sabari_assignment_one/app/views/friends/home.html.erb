@@ -1,0 +1,14 @@
+<h1>Friends</h1>
+
+<ul>
+	<% login_user_email = $login_user %>
+  <% @users.each do |user| %>
+   <% if user.email != $login_user %>
+
+    <li>
+      <a href="/friends/communication?user_id=<%=user.id%>"> <%= user.name %> </a>
+
+    </li>
+    <% end %>
+  <% end %>
+</ul>

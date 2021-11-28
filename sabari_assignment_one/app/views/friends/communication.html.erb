@@ -1,0 +1,14 @@
+<% @chat.each do |c|%>
+
+	<%= c.body%><br>
+	<% end %>
+
+<form action="add_chat">
+	<input type="hidden" id="opp_user" name="opp_user" value=<%=@user_two%>>
+   <input type="hidden" id="m_t_id" name="m_t_id" value=<%=@chat.first.message_thread_id%>>
+    <label for="chat">chat:</label><br>
+  <input type="text" id="chat" name="chat" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<a href="/friends/communication?user_id=<%=@user_two%>"> reload </a>

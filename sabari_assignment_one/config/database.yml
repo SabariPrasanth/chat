@@ -1,0 +1,8 @@
+development:
+  adapter: mysql2
+  database: sabari_assignment_one
+  pool: 5
+  timeout: 5000
+  username: root
+  password: password
+  host: localhost

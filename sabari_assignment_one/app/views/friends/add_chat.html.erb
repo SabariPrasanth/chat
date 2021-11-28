@@ -1,0 +1,22 @@
+<% if @chat.present? %>
+<%@next_id = @chat.first.message_thread_id %>
+<% @chat.each do |c|%>
+
+	<%= c.body%> <br>
+	<% end %>
+<% else %>
+    
+   <%@next_id = @chat1.first.message_thread_id %>
+<% @chat1.each do |c|%>
+
+	<%= c.body%> <br>
+<% end %>
+<% end %>
+<form action="add_chat">
+   <input type="hidden" id="m_t_id" name="m_t_id" value= <%= @next_id%> >
+    <label for="chat">chat:</label><br>
+  <input type="text" id="chat" name="chat" ><br><br>
+  <input type="submit" value="Submit">
+</form> 
+
+<a href="/friends/communication?user_id=<%=params[:opp_user]%>"> reload </a>
